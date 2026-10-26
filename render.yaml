@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mcp-exemplo-br
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node dist/index.js --http
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
